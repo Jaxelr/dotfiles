@@ -1,6 +1,6 @@
 # dotfiles
 
-These is the centralized place of my dotfiles. 
+This is the centralized repo for my dotfiles
 
 * .git.aliases based on this [article](https://haacked.com/archive/2019/02/14/including-git-aliases/)
 * .gitignore based on the [visual studio git ignore on Github](https://github.com/github/gitignore)

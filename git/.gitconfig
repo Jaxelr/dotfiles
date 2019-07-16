@@ -1,0 +1,23 @@
+[user]
+	name = Jaxel Rojas
+	email = jaxelr@gmail.com
+	signingkey = <...Key Goes Here....>
+[core]
+	autocrlf = true
+[merge]
+	tool = kdiff3
+[diff]
+	guitool = kdiff3
+[commit]
+	gpgsign = true
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[include]
+	path = ~/.gitconfig.aliases
+[rebase]
+	autoStash = true

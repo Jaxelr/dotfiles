@@ -7,7 +7,7 @@ This is the centralized repo for my dotfiles
 * .gitattributes based on [this repo](https://github.com/alexkaratarakis/gitattributes)
 * .editorconfig based on [this repo](https://github.com/RehanSaeed/EditorConfig)
 
-To install .git.aliases i can use the following comand:
+To install .git.aliases the following comand can be used:
 
 ```sh
 curl -o ~/.gitconfig.aliases https://raw.githubusercontent.com/jaxelr/dotfiles/master/git/.gitconfig.aliases

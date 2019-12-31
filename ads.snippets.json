@@ -1,0 +1,565 @@
+{
+       // Place your snippets for sql here. Each snippet is defined under a snippet name and has a prefix, body and 
+       // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+       // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+       // same ids are connected.
+       // Example:
+       // "Print to console": {
+       //     "prefix": "log",
+       //     "body": [
+       //            "console.log('$1');",
+       //            "$2"
+       //     ],
+       //     "description": "Log output to console"
+       // }
+       "ssf": {
+              "prefix": "ssf",
+              "body": "SELECT * FROM $0",
+              "description": "Select All snip"
+       },
+       "sst" : {
+              "prefix": "sst",
+              "body": "SELECT TOP 10 * FROM $0",
+              "description": "Select Top 10 snip"
+       },
+       "ssc" : {
+              "prefix": "ssc",
+              "body": "SELECT COUNT(*) FROM $0",
+              "description": "Select Count snip"
+       },
+       "s" : {
+              "prefix": "s",
+              "body": "SELECT $0",
+              "description": "Select snip"
+       },
+       "s*" : {
+              "prefix": "s*",
+              "body": "SELECT * $0",
+              "description": "Select * snip"
+       },     
+       "st" : {
+              "prefix": "st",
+              "body": "SELECT TOP 10 $0",
+              "description": "Select Top 10 snip"
+       },            
+       "st*" : {
+              "prefix": "st*",
+              "body": "SELECT TOP 10 * $0",
+              "description": "Select Top 10 * snip"
+       },            
+       "ssd" : {
+              "prefix": "ssd",
+              "body": "SELECT DISTINCT ${3:*} FROM ${2:dbo}.${1:TableName}",
+              "description": "Select Distinct snip"
+       },            
+       "nnds": {
+              "prefix": "nnds",
+              "body": "NOT NULL DEFAULT SPACE $0",
+              "description": "Adds to column not null and default space snip"
+       },
+       "ds": {
+              "prefix": "ds",
+              "body": "DEFAULT SPACE $0",
+              "description": "Default space snip"
+       },     
+       "cr": {
+              "prefix": "cr",
+              "body": ["CREATE"],
+              "description": "Create snip"
+       },
+       "crt": {
+              "prefix": "crt",
+              "body": ["CREATE TABLE ${2:dbo}.${1:TableName}", "(", "\t", ")"],
+              "description": "Create table snip"
+       },
+       "crtab": {
+              "prefix": "crtab",
+              "body": ["CREATE TABLE ${2:dbo}.${1:TableName}","(\n\t$1Id INT IDENTITY(1,1) NOT NULL",
+                            "\t,LastUpdateDate datetime2 NOT NULL DEFAULT(SYSDATETIME())",
+                            "\t,LastUpdateId varchar(64) NOT NULL DEFAULT(SYSTEM_USER)",
+                            "\t,CONSTRAINT [PK_$2_$1] PRIMARY KEY CLUSTERED ",
+                            "\t(\n\t\t$1Id ASC",
+                            "\t)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]",
+                            ") ON [PRIMARY]"
+                     ],
+              "description": "Full create table with last columns"
+       },
+       "crtv": {
+              "prefix": "crtv",
+              "body": ["DECLARE ${1:TableName} TABLE ", "(", "\t", ")"],
+              "description": "Create table variable snip"
+       },
+       "crtt": {
+              "prefix": "crtt",
+              "body": ["CREATE TABLE #${1:TableName}", "(", "\t", ")"],
+              "description": "Create temp table snip"
+       },
+       "crti": {
+              "prefix": "crti",
+              "body": ["CREATE TABLE ${2:dbo}.${1:TableName}", "(", "\t$1Id INT IDENTITY(1, 1) NOT NULL", ")"],
+              "description": "Create table with identity snip"
+       },
+       "crtu": {
+              "prefix": "crtu",
+              "body": ["CREATE TABLE ${2:dbo}.${1:TableName}", "(", "\tId UNIQUEIDENTIFIER NOT NULL", ")"],
+              "description": "Create table with unique identifier snip"
+       },
+       "rwn": {
+              "prefix": "rwn",
+              "body": "ROW_NUMBER() OVER(PARTITION BY ${1:ColumnName} ORDER BY $1) rw",
+              "description": "Row number column snip"
+       },
+       "de" : {
+              "prefix": "de",
+              "body": "DELETE $0",
+              "description": "Delete snip"
+       },
+       "dt" : {
+              "prefix": "dt",
+              "body": "DROP TABLE $0",
+              "description": "Delete snip"
+       },
+       "f" : {
+              "prefix": "f",
+              "body": "FROM $0",
+              "description": "From snip"
+       },
+       "w" : {
+              "prefix": "w",
+              "body": "WHERE $0",
+              "description": "Where snip"
+       },
+       "w1" : {
+              "prefix": "w1",
+              "body": ["WHERE 1=1", "\tAND $0"],
+              "description": "Where snip"
+       },     
+       "x" : {
+              "prefix": "x",
+              "body": "EXECUTE $0",
+              "description": "Execute snip"
+       },
+       "u" : {
+              "prefix": "u",
+              "body": "UPDATE $0",
+              "description": "Update snip"
+       },     
+       "l" : {
+              "prefix": "l",
+              "body": "LEFT $0",
+              "description": "Left snip"
+       },     
+       "r" : {
+              "prefix": "r",
+              "body": "RIGHT $0",
+              "description": "Right snip"
+       },     
+       "i" : {
+              "prefix": "i",
+              "body": "INSERT $0",
+              "description": "Insert snip"
+       },     
+       "tt" : {
+              "prefix": "tt",
+              "body": "TRUNCATE TABLE ${2:dbo}.${1:TableName}",
+              "description": "Execute snip"
+       },
+       "ex" : {
+              "prefix": "ex",
+              "body": "EXISTS $0",
+              "description": "Exists snip"
+       },
+       "ne" : {
+              "prefix": "ne",
+              "body": "NOT EXISTS $0",
+              "description": "Not Exists snip"
+       },     
+
+       "sp" : {
+              "prefix": "sp",
+              "body": "EXEC sp_help '${2:dbo}.${1:TableName}'",
+              "description": "sp_help snip"
+       },     
+       "spt" : {
+              "prefix": "spt",
+              "body": "EXEC sp_helptext '${2:dbo}.${1:TableName}'",
+              "description": "sp_helptext snip"
+       },
+       "spd" : {
+              "prefix": "spd",
+              "body": "EXEC sp_depends '${2:dbo}.${1:TableName}'",
+              "description": "sp_depends snip"
+       },
+       "w2" : {
+              "prefix": "w2",
+              "body": "sp_who2 $0",
+              "description": "sp_who2 snip"
+       },                   
+       "gb" : {
+              "prefix": "gb",
+              "body": "GROUP BY $0",
+              "description": "Group By snip"
+       },     
+       "ii" : {
+              "prefix": "ii",
+              "body": "INSERT INTO ${2:dbo}.${1:TableName}",
+              "description": "Insert Into snip"
+       },     
+       "h" : {
+              "prefix": "h",
+              "body": "HAVING $0",
+              "description": "Group By snip"
+       },            
+       "hc" : {
+              "prefix": "hc",
+              "body": "HAVING COUNT(${1:ColumnName}) > 1",
+              "description": "Group By snip"
+       },            
+       "id" : {
+              "prefix": "id",
+              "body": "BIGINT IDENTITY(1, 1) NOT NULL",
+              "description": "Id snip"
+       },                   
+       "bigid" : {
+              "prefix": "bigid",
+              "body": "BIGINT IDENTITY(1, 1) NOT NULL",
+              "description": "Id snip"
+       },                   
+       "rj" : {
+              "prefix": "rj",
+              "body": "RIGHT JOIN $0",
+              "description": "Right Join snip"
+       },
+       "lj" : {
+              "prefix": "lj",
+              "body": "LEFT JOIN $0",
+              "description": "Left Join snip"
+       },
+       "ij" : {
+              "prefix": "ij",
+              "body": "INNER JOIN $0",
+              "description": "Inner Join snip"
+       },
+       "fj" : {
+              "prefix": "fj",
+              "body": "FULL JOIN $0",
+              "description": "Full Join snip"
+       },
+       "cj" : {
+              "prefix": "cj",
+              "body": "CROSS JOIN $0",
+              "description": "Cross Join snip"
+       },
+       "jo" : {
+              "prefix": "jo",
+              "body": "JOIN $0",
+              "description": "Join snip"
+       },
+       "coa" : {
+              "prefix": "coa",
+              "body": "COALESCE($0, SPACE(0))",
+              "description": "Coalesce snip"
+       },
+       "waterfall" : {
+              "prefix": "waterfall",
+              "body": "--               _             __      _ _ \n--              | |           / _|    | | |\n--__      ____ _| |_ ___ _ __| |_ __ _| | |\n--\\ \\ /\\ / / _` | __/ _ \\ '__|  _/ _` | | |\n-- \\ V  V / (_| | ||  __/ |  | || (_| | | |\n--  \\_/\\_/ \\__,_|\\__\\___|_|  |_| \\__,_|_|_|\n$0",
+              "description": "A funny logo of waterfall snip"
+       },
+       "wtf" : {
+              "prefix": "wtf",
+              "body": "--WTF???!??!  AAAAAARRRRRRRRRRGGGGGGGGHHHHHHHHHHHHHHHHHHH!!!!!!!!!!!!!!!!!!",
+              "description": "A wtf snip"
+       },
+       "restore": {
+              "prefix": "restore",
+              "body": ["SELECT  * FROM msdb..restorehistory ", "WHERE 1=1", "\tAND destination_database_name = '${1:DatabaseName}'", "ORDER BY restore_date DESC"],
+              "description": "Check restored database snip"
+       },
+       "now" : {
+              "prefix": "now",
+              "body": "DECLARE @Now datetime2 = SYSDATETIME()",
+              "description": "Create a date for now snip"
+       },
+       "today" : {
+              "prefix": "today",
+              "body": "DECLARE @Today datetime2 = DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0);",
+              "description": "Create a date for now snip"
+       },
+       "dp" : {
+              "prefix": "dp",
+              "body": "DROP PROCEDURE '${2:dbo}.${1:ProcedureName}'",
+              "description": "Drop Procedure snip"
+       },
+       "ift" : {
+              "prefix": "ift",
+              "body": "IF OBJECT_ID('$0') > 0",
+              "description": "if object exists snip"
+       },     
+       "iftt" : {
+              "prefix": "iftt",
+              "body": "IF OBJECT_ID('tempdb..$0') < 0",
+              "description": "if temp object exists snip"
+       },     
+       "ua" : {
+              "prefix": "ua",
+              "body": "UNION ALL $0",
+              "description": "Union all snip"
+       },
+       "un" : {
+              "prefix": "un",
+              "body": "UNION $0",
+              "description": "Union snip"
+       },     
+       "ob" : {
+              "prefix": "ob",
+              "body": "ORDER BY $0",
+              "description": "Order By snip"
+       },
+       "ca" : {
+              "prefix": "ca",
+              "body": "CROSS APPLY $0",
+              "description": "Cross Apply snip"
+       },
+       "oa" : {
+              "prefix": "oa",
+              "body": "OUTER APPLY $0",
+              "description": "Outer Apply snip"
+       },
+       "dv" : {
+              "prefix": "dv",
+              "body": "DROP VIEW $0",
+              "description": "Drop View snip"
+       },
+       "uncom" : {
+              "prefix": "uncom",
+              "body": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;",
+              "description": "Set read uncommitted snip"
+       },     
+       "idento" : {
+              "prefix": "idento",
+              "body": "SET IDENTITY_INSERT ${2:dbo}.${1:TableName} ON;",
+              "description": "Set identity on table snip"
+       },     
+       "identf" : {
+              "prefix": "identf",
+              "body": "SET IDENTITY_INSERT ${2:dbo}.${1:TableName} OFF;",
+              "description": "Set identity off table snip"
+       },     
+       "lui" : {
+              "prefix": "lui",
+              "body": "LastUpdateId varchar(64) NOT NULL DEFAULT(SYSTEM_USER)",
+              "description": "Default column for last update id snip"
+       },            
+       "lud" : {
+              "prefix": "lud",
+              "body": "LastUpdateDate datetime2 NOT NULL DEFAULT(SYSDATETIME())..",
+              "description": "Default column for last update id snip"
+       },                   
+       "df" : {
+              "prefix": "df",
+              "body": "DELETE FROM $0",
+              "description": "Delete From snip"
+       },            
+       "nn" : {
+              "prefix": "nn",
+              "body": "NOT NULL",
+              "description": "Not Null snip"
+       },     
+       "ni" : {
+              "prefix": "ni",
+              "body": "NOT IN ($0)",
+              "description": "Not In snip"
+       },     
+       "inn" : {
+              "prefix": "inn",
+              "body": "IS NOT NULL",
+              "description": "Is Not Null snip"
+       },            
+       "bt" : {
+              "prefix": "bt",
+              "body": "BEGIN TRANSACTION;",
+              "description": "Begin Tranx snip"
+       },                   
+       "future": {
+              "prefix": "future",
+              "body": "DECLARE @Future DATETIME2 = DATEADD(dd, DATEDIFF(dd, 0, '9999-12-31'), 0);",
+              "description": "Define high value datetime snip"
+       },
+       "dupes": {
+              "prefix": "dupes",
+              "body": [";with dupes as", "(", "\tSELECT ROW_NUMBER() OVER (PARTITION BY ${2:ColumnName} ORDER BY $2) rw", "\t,*", "\tFROM ${1:TableName}", ")", "\nSELECT * FROM dupes WHERE rw > 1;"],
+              "description": "dupes logic to calculate duplicates snip"
+       },
+       "cancelssis": {
+              "prefix": "cancelssis",
+              "body": "EXEC ssisdb.catalog.stop_operation @operation_id = $0",
+              "description": "Cancel SSIS execution snip"
+       },
+       "sno" : {
+              "prefix": "sno",
+              "body": "SET NOCOUNT ON;",
+              "description": "Set nocount on snip"
+       },
+       "snof" : {
+              "prefix": "snof",
+              "body": "SET NOCOUNT OFF;",
+              "description": "Set nocount off snip"
+       },
+       "var" : {
+              "prefix": "var",
+              "body": "varchar($0)",
+              "description": "varchar snip"
+       },
+       "nvar" : {
+              "prefix": "nvar",
+              "body": "nvarchar($0)",
+              "description": "nvarchar snip"
+       },     
+       "xacn" : {
+              "prefix": "xacn",
+              "body": "SET XACT_ABORT ON;",
+              "description": "Set transaction abort on snip"
+       },
+       "xaco" : {
+              "prefix": "xaco",
+              "body": "SET XACT_ABORT OFF;",
+              "description": "Set transaction abort off snip"
+       },
+       "schema_" : {
+              "prefix": "schema_",
+              "body": ["DECLARE @Schema varchar(MAX) = '$0'", "\nIF NOT EXISTS (\nSELECT  schema_name",
+                            "FROM    information_schema.schemata",
+                            "WHERE   schema_name = @Schema )",
+                            "BEGIN",
+                            "\tDECLARE @SQL varchar(MAX) =  N'CREATE SCHEMA ' + @Schema",
+                            "\tEXEC (@SQL)",
+                            "END\nGO\n"],
+              "description": "Schema creation snip"
+       },
+       "index_" : {
+              "prefix": "index_",
+              "body": ["DECLARE @schema NVARCHAR(64);\nDECLARE @table NVARCHAR(128);",
+                            "\n\nSET @schema = '';\nSET @table = '$0';\n",
+                            "SELECT  * \nFROM sys.schemas s\nINNER JOIN sys.tables t",
+                            "\tON s.SCHEMA_ID = t.SCHEMA_ID\nINNER JOIN sys.indexes i",
+                            "\tON i.OBJECT_ID = t.OBJECT_ID\nWHERE t.name = @table",
+                            "\tAND (s.name = @schema OR @schema = '');"],
+              "description": "Index lookup snippet"
+       },
+       "queries_" : {
+              "prefix": "queries_",
+              "body": ["SELECT sqltext.TEXT,\n\treq.session_id,\n\treq.status,",
+                            "\treq.command,\n\treq.cpu_time,\n\treq.total_elapsed_time",
+                            "FROM sys.dm_exec_requests req\nCROSS APPLY sys.dm_exec_sql_text(sql_handle) AS sqltext"],
+              "description": "Running queries snip"
+       },
+       "seekc" : {
+              "prefix": "seekc",
+              "body": ["DECLARE @name varchar(256)\nSELECT @name = '$0'\n\nSELECT c.name AS ColName,",
+                            "\tCASE\n\t\tWHEN c.is_nullable = 1\n\t\tTHEN 'NULL'\n\t\tELSE 'NOT NULL'",
+                            "\tEND AS Nullable,\n\ts.name + '.' + t.name AS TableName\nFROM sys.columns c",
+                            "\tJOIN sys.tables t ON c.object_id = t.object_id",
+                            "\tJOIN sys.schemas s\n\tON s.schema_id = t.schema_id",
+                            "WHERE  c.name LIKE '%' + @name +'%'\nGO"],
+              "description": "Seek columns on database snippet"
+       },
+       "seeko" : {
+              "prefix": "seeko",
+              "body": ["DECLARE @SearchStr VARCHAR(100)\n\nSELECT @SearchStr = '$0'\n\nSET nocount ON",
+                     "\nSELECT DISTINCT s.name + '.' + Object_name(c.id) AS 'Object name',",
+                     "\t\t\tCASE",
+                     "\t\t\tWHEN Objectproperty(c.id, 'IsReplProc') = 1",
+                     "\t\t\tTHEN 'Replication stored procedure'",
+                     "\t\t\tWHEN Objectproperty(c.id, 'IsExtendedProc') = 1",
+                     "\t\t\tTHEN 'Extended stored procedure'",
+                     "\t\t\tWHEN Objectproperty(c.id, 'IsProcedure') = 1",
+                     "\t\t\tTHEN 'Stored Procedure'",
+                     "\t\t\tWHEN Objectproperty(c.id, 'IsTrigger') = 1",
+                     "\t\t\tTHEN 'Trigger'",
+                     "\t\t\tWHEN Objectproperty(c.id, 'IsTableFunction') = 1",
+                     "\t\t\tTHEN 'Table-valued function'",
+                     "\t\t\tWHEN Objectproperty(c.id, 'IsScalarFunction') = 1",
+                     "\t\t\tTHEN 'Scalar-valued function'",
+                     "\t\t\tWHEN Objectproperty(c.id, 'IsInlineFunction') = 1",
+                     "\t\t\tTHEN 'Inline function'",
+                     "\t\t\tEND AS 'Object type',",
+                     "\t\t\t'EXEC sp_helptext ''' + s.name + '.' + Object_name(c.id) + '''' ",
+                     "\t\t\t'Run this command to see the object text' ,",
+                     "\t\t\t[text] 'Resulting text'",
+                     "FROM   syscomments c",
+                     "\t\tJOIN sys.objects o",
+                     "\t\t\tON c.id = o.object_id",
+                     "\t\tJOIN sys.schemas s",
+                     "\t\t\tON s.schema_id = o.schema_id",
+                     "WHERE  c.TEXT LIKE '%' + @SearchStr + '%'",
+                     "\t\tAND encrypted = 0",
+                     "\t\tAND ( Objectproperty(c.id, 'IsReplProc') = 1",
+                     "\t\t\tOR Objectproperty(c.id, 'IsExtendedProc') = 1",
+                     "\t\t\tOR Objectproperty(c.id, 'IsProcedure') = 1",
+                     "\t\t\tOR Objectproperty(c.id, 'IsTrigger') = 1",
+                     "\t\t\tOR Objectproperty(c.id, 'IsTableFunction') = 1",
+                     "\t\t\tOR Objectproperty(c.id, 'IsScalarFunction') = 1",
+                     "\t\t\tOR Objectproperty(c.id, 'IsInlineFunction') = 1 )",
+                     "ORDER  BY 'Object type',",
+                     "\t'Object name'"],
+              "description": "Seek objects on database snippet"
+       },
+       "proc_": {
+              "prefix": "proc_",
+              "body": ["SET ANSI_NULLS ON;\nGO\n\nSET QUOTED_IDENTIFIER ON;\n\nCREATE OR ALTER PROC ${1:ProcedureName}",
+                            "( )\nAS\nBEGIN\n\tSET NOCOUNT ON;\n\tSET XACT_ABORT ON;\n",
+                            "END\nGO"],
+              "description": "Procedure creation snippet"
+       },
+       "func_": {
+              "prefix": "func_",
+              "body": ["CREATE FUNCTION ${1:FunctionName}(\n\n)\nRETURNS ${2:ReturnType}\nAS\nBEGIN\n\n\tRETURN\nEND\nGO"],
+              "description": "Function creation snippet"
+       },
+       "size_": {
+              "prefix": "size_",
+              "body": ["SET NOCOUNT ON;\nDBCC UPDATEUSAGE(0) \n-- DB size.\nEXEC sp_spaceused",
+                     "-- Table row counts and sizes.\nCREATE TABLE #t\n(",
+                     "\t[name] NVARCHAR(128),\n\t[rows] CHAR(11),\n\treserved VARCHAR(18),\n\tdata VARCHAR(18),",
+                     "\tindex_size VARCHAR(18),\n\tunused VARCHAR(18)\n)\n",
+                     "INSERT #t EXEC sp_msForEachTable 'EXEC sp_spaceused ''?'''",
+                     "SELECT * \nFROM #t \n-- # of rows. \nSELECT SUM(CAST([rows] AS int)) AS [rows]",
+                     "FROM #t \nDROP TABLE #t"],
+              "description": "Size validation snippet"
+       },
+       "constraint_": {
+              "prefix": "constraint_",
+              "body": ["SELECT\n--Add Constraints\n'ALTER TABLE [' + s.NAME + '].[' + t.NAME",
+                     "+ '] ADD CONSTRAINT [' + f.NAME\n+ '] FOREIGN KEY(' + c.NAME + ') REFERENCES ['",
+                     "+ rs.NAME + '].[' + rt.NAME + '] (' + rc.NAME + ');' + CHAR(13)+CHAR(10) + 'GO' AS [Add_Constraints]",
+                     "--Remove Constraints\n,\n'IF EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS WHERE CONSTRAINT_NAME = ''' + f.Name +''') ALTER TABLE [' + s.NAME + '].[' + t.NAME",
+                     "+ '] DROP CONSTRAINT [' + f.NAME + '];' + CHAR(13)+CHAR(10) + 'GO' AS [Remove_Contraints]",
+                     "FROM   sys.foreign_keys f \n\t\tINNER JOIN sys.foreign_key_columns AS fk",
+                     "\t\t\tON f.object_id = fk.constraint_object_id\n\t\tINNER JOIN sys.tables AS t",
+                     "\t\t\tON fk.parent_object_id = t.object_id\n\t\tINNER JOIN sys.schemas AS s",
+                     "\t\t\tON s.schema_id = t.schema_id\n\t\tINNER JOIN sys.columns AS c",
+                     "\t\t\tON fk.parent_object_id = c.object_id\n\t\t\tAND fk.parent_column_id = c.column_id",
+                     "\t\tINNER JOIN sys.tables AS rt\n\t\t\tON rt.object_id = fk.referenced_object_id",
+                     "\t\tINNER JOIN sys.schemas AS rs\n\t\t\tON rs.schema_id = rt.schema_id",
+                     "\t\tINNER JOIN sys.columns AS rc\n\t\t\tON rc.object_id = fk.referenced_object_id",
+                     "\t\t\tAND fk.referenced_column_id = rc.column_id"],
+              "description": "Size validation snippet"
+       },
+       "catch_": {
+              "prefix": "catch_",
+              "body": ["BEGIN CATCH\n\tDECLARE @ErrorMessage NVARCHAR(4000);",
+                            "\tDECLARE @ErrorSeverity INT;\n\tDECLARE @ErrorState INT;",
+                            "\tSELECT\n\t\t@ErrorMessage = ERROR_MESSAGE(),\n\t\t@ErrorSeverity = ERROR_SEVERITY(),",
+                            "\t\t@ErrorState = ERROR_STATE();\n\n\tRAISERROR (@ErrorMessage, -- Message text.",
+                            "\t\t\t@ErrorSeverity, -- Severity.\n\t\t\t@ErrorState -- State.\n\t);",
+                            "END CATCH"],
+              "description": "Catch snippet"
+       },
+       "primary_" : {
+              "prefix": "primary_",
+              "body": ["CONSTRAINT [PK_PrimaryKey] PRIMARY KEY CLUSTERED\n\t(,",
+                             "\t\t$0 ASC\n\t)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON,ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]",
+                             ") ON [PRIMARY]"],
+              "description": ""
+       }
+}

@@ -23,7 +23,6 @@
     browse = !git open
     # Lists the files with the most churn
     churn = !git --no-pager log --name-only --oneline | grep -v ' ' | sort | uniq -c | sort -nr | head
-    cleanup = clean -xdf -e *.DotSettings* -e s3_keys.ps1
     # Stages every file then creates a commit with specified message
     cm = !git add -A && git commit -m
     co = checkout
@@ -51,7 +50,6 @@
     open = "!f(){ URL=$(git config remote.origin.url); open ${URL%.git}; }; f"
     pr = "!f(){ URL=$(git config remote.origin.url); open ${URL%.git}/compare/$(git rev-parse --abbrev-ref HEAD); }; f"
     publish = "!f() { git push origin $1 && git push drafts :$1 && git browse }; f"
-    rba = rebase --abort
     rbc = "!f(){ git add -A && git rebase --continue; }; f"
     re = "!f(){ git fetch origin && git rebase origin/${1-master}; }; f"
     refresh = reset -q HEAD --hard

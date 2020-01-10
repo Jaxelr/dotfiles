@@ -5,18 +5,19 @@
 [core]
 	autocrlf = true
 [merge]
-	tool = kdiff3
+	tool = beyondcompare4
 [diff]
-	guitool = kdiff3
+	guitool = beyondcompare4
 [commit]
 	gpgsign = true
 [gpg]
 	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
 [difftool "sourcetree"]
-	cmd = '' \"$LOCAL\" \"$REMOTE\"
+	path = C:\\Program Files\\Beyond Compare 4\\bcomp.exe
+    cmd = \"C:\\Program Files\\Beyond Compare 4\\bcomp.exe" \"$LOCAL\" \"$REMOTE\"
 [mergetool "sourcetree"]
-	cmd = "'' "
-	trustExitCode = true
+	path = C:\\Program Files\\Beyond Compare 4\\bcomp.exe
+    cmd = \"C:\\Program Files\\Beyond Compare 4\\bcomp.exe" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 [include]
 	path = ~/.gitconfig.aliases
 [rebase]

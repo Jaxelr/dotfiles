@@ -1,7 +1,7 @@
 {
-       // Place your snippets for sql here. Each snippet is defined under a snippet name and has a prefix, body and 
+       // Place your snippets for sql here. Each snippet is defined under a snippet name and has a prefix, body and
        // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-       // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+       // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
        // same ids are connected.
        // Example:
        // "Print to console": {
@@ -15,66 +15,66 @@
        "ssf": {
               "prefix": "ssf",
               "body": "SELECT * FROM $0",
-              "description": "Select All snip"
+              "description": "Select All snippet"
        },
        "sst" : {
               "prefix": "sst",
               "body": "SELECT TOP 10 * FROM $0",
-              "description": "Select Top 10 snip"
+              "description": "Select Top 10 snippet"
        },
        "ssc" : {
               "prefix": "ssc",
               "body": "SELECT COUNT(*) FROM $0",
-              "description": "Select Count snip"
+              "description": "Select Count snippet"
        },
        "s" : {
               "prefix": "s",
               "body": "SELECT $0",
-              "description": "Select snip"
+              "description": "Select snippet"
        },
        "s*" : {
               "prefix": "s*",
               "body": "SELECT * $0",
-              "description": "Select * snip"
-       },     
+              "description": "Select * snippet"
+       },
        "st" : {
               "prefix": "st",
               "body": "SELECT TOP 10 $0",
-              "description": "Select Top 10 snip"
-       },            
+              "description": "Select Top 10 snippet"
+       },
        "st*" : {
               "prefix": "st*",
               "body": "SELECT TOP 10 * $0",
-              "description": "Select Top 10 * snip"
-       },            
+              "description": "Select Top 10 * snippet"
+       },
        "ssd" : {
               "prefix": "ssd",
-              "body": "SELECT DISTINCT ${3:*} FROM ${2:dbo}.${1:TableName}",
-              "description": "Select Distinct snip"
-       },            
+              "body": "SELECT DISTINCT ${3:*} FROM ${1:dbo}.${2:TableName}",
+              "description": "Select Distinct snippet"
+       },
        "nnds": {
               "prefix": "nnds",
               "body": "NOT NULL DEFAULT SPACE $0",
-              "description": "Adds to column not null and default space snip"
+              "description": "Adds to column not null and default space snippet"
        },
        "ds": {
               "prefix": "ds",
               "body": "DEFAULT SPACE $0",
-              "description": "Default space snip"
-       },     
+              "description": "Default space snippet"
+       },
        "cr": {
               "prefix": "cr",
               "body": ["CREATE"],
-              "description": "Create snip"
+              "description": "Create snippet"
        },
        "crt": {
               "prefix": "crt",
-              "body": ["CREATE TABLE ${2:dbo}.${1:TableName}", "(", "\t", ")"],
-              "description": "Create table snip"
+              "body": ["CREATE TABLE ${1:dbo}.${2:TableName}", "(", "\t", ")"],
+              "description": "Create table snippet"
        },
        "crtab": {
               "prefix": "crtab",
-              "body": ["CREATE TABLE ${2:dbo}.${1:TableName}","(\n\t$1Id INT IDENTITY(1,1) NOT NULL",
+              "body": ["CREATE TABLE ${1:dbo}.${2:TableName}","(\n\t$1Id INT IDENTITY(1,1) NOT NULL",
                             "\t,LastUpdateDate datetime2 NOT NULL DEFAULT(SYSDATETIME())",
                             "\t,LastUpdateId varchar(64) NOT NULL DEFAULT(SYSTEM_USER)",
                             "\t,CONSTRAINT [PK_$2_$1] PRIMARY KEY CLUSTERED ",
@@ -87,343 +87,343 @@
        "crtv": {
               "prefix": "crtv",
               "body": ["DECLARE ${1:TableName} TABLE ", "(", "\t", ")"],
-              "description": "Create table variable snip"
+              "description": "Create table variable snippet"
        },
        "crtt": {
               "prefix": "crtt",
               "body": ["CREATE TABLE #${1:TableName}", "(", "\t", ")"],
-              "description": "Create temp table snip"
+              "description": "Create temp table snippet"
        },
        "crti": {
               "prefix": "crti",
-              "body": ["CREATE TABLE ${2:dbo}.${1:TableName}", "(", "\t$1Id INT IDENTITY(1, 1) NOT NULL", ")"],
-              "description": "Create table with identity snip"
+              "body": ["CREATE TABLE ${1:dbo}.${2:TableName}", "(", "\t$1Id INT IDENTITY(1, 1) NOT NULL", ")"],
+              "description": "Create table with identity snippet"
        },
        "crtu": {
               "prefix": "crtu",
-              "body": ["CREATE TABLE ${2:dbo}.${1:TableName}", "(", "\tId UNIQUEIDENTIFIER NOT NULL", ")"],
-              "description": "Create table with unique identifier snip"
+              "body": ["CREATE TABLE ${1:dbo}.${2:TableName}", "(", "\tId UNIQUEIDENTIFIER NOT NULL", ")"],
+              "description": "Create table with unique identifier snippet"
        },
        "rwn": {
               "prefix": "rwn",
               "body": "ROW_NUMBER() OVER(PARTITION BY ${1:ColumnName} ORDER BY $1) rw",
-              "description": "Row number column snip"
+              "description": "Row number column snippet"
        },
        "de" : {
               "prefix": "de",
               "body": "DELETE $0",
-              "description": "Delete snip"
+              "description": "Delete snippet"
        },
        "dt" : {
               "prefix": "dt",
               "body": "DROP TABLE $0",
-              "description": "Delete snip"
+              "description": "Delete snippet"
        },
        "f" : {
               "prefix": "f",
               "body": "FROM $0",
-              "description": "From snip"
+              "description": "From snippet"
        },
        "w" : {
               "prefix": "w",
               "body": "WHERE $0",
-              "description": "Where snip"
+              "description": "Where snippet"
        },
        "w1" : {
               "prefix": "w1",
               "body": ["WHERE 1=1", "\tAND $0"],
-              "description": "Where snip"
-       },     
+              "description": "Where snippet"
+       },
        "x" : {
               "prefix": "x",
               "body": "EXECUTE $0",
-              "description": "Execute snip"
+              "description": "Execute snippet"
        },
        "u" : {
               "prefix": "u",
               "body": "UPDATE $0",
-              "description": "Update snip"
-       },     
+              "description": "Update snippet"
+       },
        "l" : {
               "prefix": "l",
               "body": "LEFT $0",
-              "description": "Left snip"
-       },     
+              "description": "Left snippet"
+       },
        "r" : {
               "prefix": "r",
               "body": "RIGHT $0",
-              "description": "Right snip"
-       },     
+              "description": "Right snippet"
+       },
        "i" : {
               "prefix": "i",
               "body": "INSERT $0",
-              "description": "Insert snip"
-       },     
+              "description": "Insert snippet"
+       },
        "tt" : {
               "prefix": "tt",
-              "body": "TRUNCATE TABLE ${2:dbo}.${1:TableName}",
-              "description": "Execute snip"
+              "body": "TRUNCATE TABLE ${1:dbo}.${2:TableName}",
+              "description": "Execute snippet"
        },
        "ex" : {
               "prefix": "ex",
               "body": "EXISTS $0",
-              "description": "Exists snip"
+              "description": "Exists snippet"
        },
        "ne" : {
               "prefix": "ne",
               "body": "NOT EXISTS $0",
-              "description": "Not Exists snip"
-       },     
+              "description": "Not Exists snippet"
+       },
 
        "sp" : {
               "prefix": "sp",
-              "body": "EXEC sp_help '${2:dbo}.${1:TableName}'",
-              "description": "sp_help snip"
-       },     
+              "body": "EXEC sp_help '${1:dbo}.${2:TableName}'",
+              "description": "sp_help snippet"
+       },
        "spt" : {
               "prefix": "spt",
-              "body": "EXEC sp_helptext '${2:dbo}.${1:TableName}'",
-              "description": "sp_helptext snip"
+              "body": "EXEC sp_helptext '${1:dbo}.${2:TableName}'",
+              "description": "sp_helptext snippet"
        },
        "spd" : {
               "prefix": "spd",
-              "body": "EXEC sp_depends '${2:dbo}.${1:TableName}'",
-              "description": "sp_depends snip"
+              "body": "EXEC sp_depends '${1:dbo}.${2:TableName}'",
+              "description": "sp_depends snippet"
        },
        "w2" : {
               "prefix": "w2",
               "body": "sp_who2 $0",
-              "description": "sp_who2 snip"
-       },                   
+              "description": "sp_who2 snippet"
+       },
        "gb" : {
               "prefix": "gb",
               "body": "GROUP BY $0",
-              "description": "Group By snip"
-       },     
+              "description": "Group By snippet"
+       },
        "ii" : {
               "prefix": "ii",
-              "body": "INSERT INTO ${2:dbo}.${1:TableName}",
-              "description": "Insert Into snip"
-       },     
+              "body": "INSERT INTO ${1:dbo}.${2:TableName}",
+              "description": "Insert Into snippet"
+       },
        "h" : {
               "prefix": "h",
               "body": "HAVING $0",
-              "description": "Group By snip"
-       },            
+              "description": "Group By snippet"
+       },
        "hc" : {
               "prefix": "hc",
               "body": "HAVING COUNT(${1:ColumnName}) > 1",
-              "description": "Group By snip"
-       },            
+              "description": "Group By snippet"
+       },
        "id" : {
               "prefix": "id",
               "body": "BIGINT IDENTITY(1, 1) NOT NULL",
-              "description": "Id snip"
-       },                   
+              "description": "Id snippet"
+       },
        "bigid" : {
               "prefix": "bigid",
               "body": "BIGINT IDENTITY(1, 1) NOT NULL",
-              "description": "Id snip"
-       },                   
+              "description": "Id snippet"
+       },
        "rj" : {
               "prefix": "rj",
               "body": "RIGHT JOIN $0",
-              "description": "Right Join snip"
+              "description": "Right Join snippet"
        },
        "lj" : {
               "prefix": "lj",
               "body": "LEFT JOIN $0",
-              "description": "Left Join snip"
+              "description": "Left Join snippet"
        },
        "ij" : {
               "prefix": "ij",
               "body": "INNER JOIN $0",
-              "description": "Inner Join snip"
+              "description": "Inner Join snippet"
        },
        "fj" : {
               "prefix": "fj",
               "body": "FULL JOIN $0",
-              "description": "Full Join snip"
+              "description": "Full Join snippet"
        },
        "cj" : {
               "prefix": "cj",
               "body": "CROSS JOIN $0",
-              "description": "Cross Join snip"
+              "description": "Cross Join snippet"
        },
        "jo" : {
               "prefix": "jo",
               "body": "JOIN $0",
-              "description": "Join snip"
+              "description": "Join snippet"
        },
        "coa" : {
               "prefix": "coa",
               "body": "COALESCE($0, SPACE(0))",
-              "description": "Coalesce snip"
+              "description": "Coalesce snippet"
        },
        "waterfall" : {
               "prefix": "waterfall",
               "body": "--               _             __      _ _ \n--              | |           / _|    | | |\n--__      ____ _| |_ ___ _ __| |_ __ _| | |\n--\\ \\ /\\ / / _` | __/ _ \\ '__|  _/ _` | | |\n-- \\ V  V / (_| | ||  __/ |  | || (_| | | |\n--  \\_/\\_/ \\__,_|\\__\\___|_|  |_| \\__,_|_|_|\n$0",
-              "description": "A funny logo of waterfall snip"
+              "description": "A funny logo of waterfall snippet"
        },
        "wtf" : {
               "prefix": "wtf",
               "body": "--WTF???!??!  AAAAAARRRRRRRRRRGGGGGGGGHHHHHHHHHHHHHHHHHHH!!!!!!!!!!!!!!!!!!",
-              "description": "A wtf snip"
+              "description": "A wtf snippet"
        },
        "restore": {
               "prefix": "restore",
               "body": ["SELECT  * FROM msdb..restorehistory ", "WHERE 1=1", "\tAND destination_database_name = '${1:DatabaseName}'", "ORDER BY restore_date DESC"],
-              "description": "Check restored database snip"
+              "description": "Check restored database snippet"
        },
        "now" : {
               "prefix": "now",
               "body": "DECLARE @Now datetime2 = SYSDATETIME()",
-              "description": "Create a date for now snip"
+              "description": "Create a date for now snippet"
        },
        "today" : {
               "prefix": "today",
               "body": "DECLARE @Today datetime2 = DATEADD(dd, DATEDIFF(dd, 0, GETDATE()), 0);",
-              "description": "Create a date for now snip"
+              "description": "Create a date for now snippet"
        },
        "dp" : {
               "prefix": "dp",
               "body": "DROP PROCEDURE '${2:dbo}.${1:ProcedureName}'",
-              "description": "Drop Procedure snip"
+              "description": "Drop Procedure snippet"
        },
        "ift" : {
               "prefix": "ift",
               "body": "IF OBJECT_ID('$0') > 0",
-              "description": "if object exists snip"
-       },     
+              "description": "if object exists snippet"
+       },
        "iftt" : {
               "prefix": "iftt",
               "body": "IF OBJECT_ID('tempdb..$0') < 0",
-              "description": "if temp object exists snip"
-       },     
+              "description": "if temp object exists snippet"
+       },
        "ua" : {
               "prefix": "ua",
               "body": "UNION ALL $0",
-              "description": "Union all snip"
+              "description": "Union all snippet"
        },
        "un" : {
               "prefix": "un",
               "body": "UNION $0",
-              "description": "Union snip"
-       },     
+              "description": "Union snippet"
+       },
        "ob" : {
               "prefix": "ob",
               "body": "ORDER BY $0",
-              "description": "Order By snip"
+              "description": "Order By snippet"
        },
        "ca" : {
               "prefix": "ca",
               "body": "CROSS APPLY $0",
-              "description": "Cross Apply snip"
+              "description": "Cross Apply snippet"
        },
        "oa" : {
               "prefix": "oa",
               "body": "OUTER APPLY $0",
-              "description": "Outer Apply snip"
+              "description": "Outer Apply snippet"
        },
        "dv" : {
               "prefix": "dv",
               "body": "DROP VIEW $0",
-              "description": "Drop View snip"
+              "description": "Drop View snippet"
        },
        "uncom" : {
               "prefix": "uncom",
               "body": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;",
-              "description": "Set read uncommitted snip"
-       },     
+              "description": "Set read uncommitted snippet"
+       },
        "idento" : {
               "prefix": "idento",
-              "body": "SET IDENTITY_INSERT ${2:dbo}.${1:TableName} ON;",
-              "description": "Set identity on table snip"
-       },     
+              "body": "SET IDENTITY_INSERT ${1:dbo}.${2:TableName} ON;",
+              "description": "Set identity on table snippet"
+       },
        "identf" : {
               "prefix": "identf",
-              "body": "SET IDENTITY_INSERT ${2:dbo}.${1:TableName} OFF;",
-              "description": "Set identity off table snip"
-       },     
+              "body": "SET IDENTITY_INSERT ${1:dbo}.${2:TableName} OFF;",
+              "description": "Set identity off table snippet"
+       },
        "lui" : {
               "prefix": "lui",
               "body": "LastUpdateId varchar(64) NOT NULL DEFAULT(SYSTEM_USER)",
-              "description": "Default column for last update id snip"
-       },            
+              "description": "Default column for last update id snippet"
+       },
        "lud" : {
               "prefix": "lud",
               "body": "LastUpdateDate datetime2 NOT NULL DEFAULT(SYSDATETIME())..",
-              "description": "Default column for last update id snip"
-       },                   
+              "description": "Default column for last update id snippet"
+       },
        "df" : {
               "prefix": "df",
               "body": "DELETE FROM $0",
-              "description": "Delete From snip"
-       },            
+              "description": "Delete From snippet"
+       },
        "nn" : {
               "prefix": "nn",
               "body": "NOT NULL",
-              "description": "Not Null snip"
-       },     
+              "description": "Not Null snippet"
+       },
        "ni" : {
               "prefix": "ni",
               "body": "NOT IN ($0)",
-              "description": "Not In snip"
-       },     
+              "description": "Not In snippet"
+       },
        "inn" : {
               "prefix": "inn",
               "body": "IS NOT NULL",
-              "description": "Is Not Null snip"
-       },            
+              "description": "Is Not Null snippet"
+       },
        "bt" : {
               "prefix": "bt",
               "body": "BEGIN TRANSACTION;",
-              "description": "Begin Tranx snip"
-       },                   
+              "description": "Begin Tranx snippet"
+       },
        "future": {
               "prefix": "future",
               "body": "DECLARE @Future DATETIME2 = DATEADD(dd, DATEDIFF(dd, 0, '9999-12-31'), 0);",
-              "description": "Define high value datetime snip"
+              "description": "Define high value datetime snippet"
        },
        "dupes": {
               "prefix": "dupes",
               "body": [";with dupes as", "(", "\tSELECT ROW_NUMBER() OVER (PARTITION BY ${2:ColumnName} ORDER BY $2) rw", "\t,*", "\tFROM ${1:TableName}", ")", "\nSELECT * FROM dupes WHERE rw > 1;"],
-              "description": "dupes logic to calculate duplicates snip"
+              "description": "dupes logic to calculate duplicates snippet"
        },
        "cancelssis": {
               "prefix": "cancelssis",
               "body": "EXEC ssisdb.catalog.stop_operation @operation_id = $0",
-              "description": "Cancel SSIS execution snip"
+              "description": "Cancel SSIS execution snippet"
        },
        "sno" : {
               "prefix": "sno",
               "body": "SET NOCOUNT ON;",
-              "description": "Set nocount on snip"
+              "description": "Set nocount on snippet"
        },
        "snof" : {
               "prefix": "snof",
               "body": "SET NOCOUNT OFF;",
-              "description": "Set nocount off snip"
+              "description": "Set nocount off snippet"
        },
        "var" : {
               "prefix": "var",
               "body": "varchar($0)",
-              "description": "varchar snip"
+              "description": "varchar snippet"
        },
        "nvar" : {
               "prefix": "nvar",
               "body": "nvarchar($0)",
-              "description": "nvarchar snip"
-       },     
+              "description": "nvarchar snippet"
+       },
        "xacn" : {
               "prefix": "xacn",
               "body": "SET XACT_ABORT ON;",
-              "description": "Set transaction abort on snip"
+              "description": "Set transaction abort on snippet"
        },
        "xaco" : {
               "prefix": "xaco",
               "body": "SET XACT_ABORT OFF;",
-              "description": "Set transaction abort off snip"
+              "description": "Set transaction abort off snippet"
        },
        "schema_" : {
               "prefix": "schema_",
@@ -434,7 +434,7 @@
                             "\tDECLARE @SQL varchar(MAX) =  N'CREATE SCHEMA ' + @Schema",
                             "\tEXEC (@SQL)",
                             "END\nGO\n"],
-              "description": "Schema creation snip"
+              "description": "Schema creation snippet"
        },
        "index_" : {
               "prefix": "index_",
@@ -451,7 +451,7 @@
               "body": ["SELECT sqltext.TEXT,\n\treq.session_id,\n\treq.status,",
                             "\treq.command,\n\treq.cpu_time,\n\treq.total_elapsed_time",
                             "FROM sys.dm_exec_requests req\nCROSS APPLY sys.dm_exec_sql_text(sql_handle) AS sqltext"],
-              "description": "Running queries snip"
+              "description": "Running queries snippet"
        },
        "seekc" : {
               "prefix": "seekc",

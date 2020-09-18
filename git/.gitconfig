@@ -9,7 +9,7 @@
 [diff]
 	guitool = beyondcompare4
 [commit]
-	gpgsign = true
+	gpgsign = false
 [gpg]
 	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
 [difftool "sourcetree"]

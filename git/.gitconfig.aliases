@@ -20,7 +20,6 @@
     bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
     # Lists all branches including remote branches
     branches = branch -a
-    browse = !git open
     # Lists the files with the most churn
     churn = !git --no-pager log --name-only --oneline | grep -v ' ' | sort | uniq -c | sort -nr | head
     # Stages every file then creates a commit with specified message

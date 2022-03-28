@@ -20,5 +20,8 @@
     cmd = \"C:\\Program Files\\Beyond Compare 4\\bcomp.exe" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 [include]
 	path = ~/.gitconfig.aliases
+# Add this only if you need multiple emails/users for multiple profiles (work/personal)
+# [includeIf "gitdir:~/src/work/"]
+# 	path = ~/src/work/.gitconfig
 [rebase]
 	autoStash = true

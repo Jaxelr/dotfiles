@@ -1,0 +1,2 @@
+[user] #this would overwrite the props on .gitconfig inclusion
+    email = work@mail.com

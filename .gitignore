@@ -90,6 +90,15 @@ _TeamCity*
 # DotCover is a Code Coverage Tool
 *.dotCover
 
+# AxoCover is a Code Coverage Tool
+.axoCover/*
+!.axoCover/settings.json
+
+# Coverlet is a free, cross platform Code Coverage Tool
+coverage*.json
+coverage*.xml
+coverage*.info
+
 # Visual Studio code coverage results
 *.coverage
 *.coveragexml
@@ -193,10 +202,6 @@ paket-files/
 # FAKE - F# Make
 .fake/
 
-# JetBrains Rider
-.idea/
-*.sln.iml
-
 # CodeRush
 .cr/
 
@@ -210,6 +215,21 @@ __pycache__/
 # You probably want to include the .vscode file, I by default dont want to.
 .vscode/
 
-# Code Coverage stuff
-coverage.xml
-**/testcoverage/*
+# Ionide (cross platform F# VS Code tools) working folder
+.ionide/
+
+# Fody - auto-generated XML schema
+FodyWeavers.xsd
+
+# Local History for Visual Studio Code
+.history/
+
+# Windows Installer files from build outputs
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# JetBrains Rider
+*.sln.iml

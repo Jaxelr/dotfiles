@@ -61,6 +61,7 @@
     st = status -s
     stashes = stash list
     sync = !git pull --rebase && git push
+    total-lines = "!git ls-files | xargs cat | wc -l"
     undo = reset HEAD~1 --mixed
     # Unstage a file
     unstage = reset -q HEAD --

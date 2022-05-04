@@ -1,4 +1,8 @@
-# This needs to have oh my posh and posh git installed
+# This needs to have installed: 
+# - oh my posh
+# - psreadline
+# - terminal icons 
+# - posh git 
 
 Import-Module posh-git
 Import-Module oh-my-posh

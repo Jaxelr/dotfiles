@@ -5,11 +5,10 @@
 # - posh git
 
 Import-Module posh-git
-Import-Module oh-my-posh
+# Import-Module oh-my-posh (This must be installed via winget now)
 Import-Module -Name Terminal-Icons
+oh-my-posh init pwsh --config .ohmyposhconfig.json | Invoke-Expression
 
-oh-my-posh --init --shell pwsh --config .ohmyposhconfig.json | Invoke-Expression
-Set-PoshPrompt -Theme Iterm2
 if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module PSReadLine

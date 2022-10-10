@@ -7,7 +7,7 @@ This is the centralized repo for my dotfiles
 * .gitattributes based on this [repo](https://github.com/alexkaratarakis/gitattributes)
 * .editorconfig based on this [repo](https://github.com/RehanSaeed/EditorConfig)
 * profile.ps1 is mostly artisanal, but inspired by this [article](https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal)
-* .ohmyposh config file taken from this [gist](https://gist.github.com/shanselman/1f69b28bfcc4f7716e49eb5bb34d7b2c)
+* .ohmyposh config inspired from this [gist](https://gist.github.com/shanselman/1f69b28bfcc4f7716e49eb5bb34d7b2c)
 
 To install .git.aliases the following comand can be used:
 

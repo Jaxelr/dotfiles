@@ -4,20 +4,18 @@
 	signingkey = <...Key Goes Here....>
 [core]
 	autocrlf = true
-[merge]
-	tool = beyondcompare4
 [diff]
-	guitool = beyondcompare4
+    tool = vscode
+[merge]
+    tool = vscode
 [commit]
 	gpgsign = false
 [gpg]
 	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
-[difftool "sourcetree"]
-	path = C:\\Program Files\\Beyond Compare 4\\bcomp.exe
-    cmd = \"C:\\Program Files\\Beyond Compare 4\\bcomp.exe" \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-	path = C:\\Program Files\\Beyond Compare 4\\bcomp.exe
-    cmd = \"C:\\Program Files\\Beyond Compare 4\\bcomp.exe" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
 [include]
 	path = ~/.gitconfig.aliases
 # Add this only if you need multiple emails/users for multiple profiles (work/personal)

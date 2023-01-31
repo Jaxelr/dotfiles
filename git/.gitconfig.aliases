@@ -49,6 +49,7 @@
     open = "!f(){ URL=$(git config remote.origin.url); open ${URL%.git}; }; f"
     pr = "!f(){ URL=$(git config remote.origin.url); open ${URL%.git}/compare/$(git rev-parse --abbrev-ref HEAD); }; f"
     publish = "!f() { git push origin $1 && git push drafts :$1 && git browse }; f"
+    rank = "shortlog -s -n --no-merges"
     rbc = "!f(){ git add -A && git rebase --continue; }; f"
     re = "!f(){ git fetch origin && git rebase origin/${1-master}; }; f"
     refresh = reset -q HEAD --hard

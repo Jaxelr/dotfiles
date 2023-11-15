@@ -23,3 +23,5 @@
 # 	path = ~/src/work/.gitconfig
 [rebase]
 	autoStash = true
+[rerere]
+	enabled = true

@@ -15,7 +15,7 @@ if ($host.Name -eq 'ConsoleHost')
 }
 
 ###Custom Aliases
-function Touch-File() {
+function New-File() {
     $fileName = $args[0]
 
     if (!$fileName) {
@@ -33,9 +33,30 @@ function Touch-File() {
     }
 }
 
+function Remove-Files() {
+    $foldersToDelete = @("bin", "obj", "msbuild_logs", "benchmarkDotnet.Artifacts")
+
+    $directories = Get-ChildItem -Directory -Recurse
+
+    foreach ($dir in $directories) {
+        foreach ($folder in $foldersToDelete) {
+            $path = Join-Path -Path $dir.FullName -ChildPath $folder
+            if (Test-Path $path) {
+                Remove-Item -Path $path -Recurse -Force
+                Write-Host "Deleted: $path"
+            }
+        }
+    }
+}
+
 ### Create an alias for touch
 
 # Check if the alias exists
 if (-not(Test-Path -Path Alias:Touch)) {
-    New-Alias -Name Touch Touch-File -Force
+    New-Alias -Name Touch New-File -Force
+}
+
+# Cleanup files
+if (-not(Test-Path -Path Alias:Cleanup)) {
+    New-Alias -Name Cleanup Remove-Files -Force
 }

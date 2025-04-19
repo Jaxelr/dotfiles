@@ -15,9 +15,9 @@
     aliases = "!git config -l | grep alias | cut -c 7-"
     amend = commit -a --amend
     # Deletes all branches merged specified branch (or master if no branch is specified)
-    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+    bclean = "!git gone | xargs -r git branch -D"
     # Switches to specified branch (or master if no branch is specified), runs git up, then runs bclean.
-    bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+    bdone = "!f() { DEFAULT=$(git default); git checkout ${1-$DEFAULT} && git up && git bclean; }; f"
     # Lists all branches including remote branches
     branches = branch -a
     # Lists the files with the most churn

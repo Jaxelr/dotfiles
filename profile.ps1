@@ -34,7 +34,7 @@ function New-File() {
 }
 
 function Remove-Files() {
-    $foldersToDelete = @("bin", "obj", "msbuild_logs", "benchmarkDotnet.Artifacts")
+        $foldersToDelete = @("bin", "obj", "msbuild_logs", "benchmarkDotnet.Artifacts", "packages", "artifacts", ".vs")
 
     $directories = Get-ChildItem -Directory -Recurse
 

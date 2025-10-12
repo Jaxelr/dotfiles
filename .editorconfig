@@ -4,6 +4,7 @@ root = true
 #All Files
 [*]
 end_of_line = crlf
+tab_width = 4
 indent_size = 4
 indent_style = space
 insert_final_newline = true
@@ -150,7 +151,7 @@ csharp_style_unused_value_expression_statement_preference = discard_variable:sil
 csharp_style_prefer_unbound_generic_type_in_nameof = true:suggestion
 
 # .NET Naming conventions
-[*.{cs,csx,cake,vb}]
+[*.{cs,csx,cake}]
 # Naming Symbols
 dotnet_naming_symbols.constant_fields.applicable_kinds = field
 dotnet_naming_symbols.constant_fields.required_modifiers = const
@@ -209,4 +210,3 @@ dotnet_naming_rule.interface_types_must_be_prefixed_with_i.style = prefix_interf
 # Custom
 dotnet_diagnostic.IDE0052.severity = none
 dotnet_diagnostic.RCS1090.severity = none
-tab_width = 4

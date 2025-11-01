@@ -47,6 +47,12 @@ insert_final_newline = true
 [*.sh]
 end_of_line = lf
 
+# F# Files
+[*.{fs,fsx,fsi}]
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
 # CSharp code style settings:
 [*.cs]
 # Indentation

@@ -38,7 +38,6 @@ trim_trailing_whitespace = true
 # Web Files
 [*.{htm,html,js,ts,tsx,css,sass,scss,less,svg,vue}]
 indent_size = 2
-insert_final_newline = true
 
 # Batch Files
 [*.{cmd,bat}]
@@ -50,7 +49,6 @@ end_of_line = lf
 # F# Files
 [*.{fs,fsx,fsi}]
 indent_size = 4
-insert_final_newline = true
 trim_trailing_whitespace = true
 
 # CSharp code style settings:
@@ -133,7 +131,7 @@ dotnet_style_prefer_collection_expression = when_types_exactly_match:suggestion
 dotnet_style_operator_placement_when_wrapping = beginning_of_line
 # .NET Naming conventions
 csharp_indent_labels = one_less_than_current
-csharp_using_directive_placement = outside_namespace:silent
+csharp_using_directive_placement = outside_namespace:warning
 csharp_prefer_simple_using_statement = true:suggestion
 csharp_prefer_braces = true:silent
 csharp_style_namespace_declarations = file_scoped:warning
@@ -157,6 +155,9 @@ csharp_style_unused_value_assignment_preference = discard_variable:suggestion
 csharp_style_unused_value_expression_statement_preference = discard_variable:silent
 csharp_style_prefer_implicitly_typed_lambda_expression = true:suggestion
 csharp_style_prefer_unbound_generic_type_in_nameof = true:suggestion
+csharp_style_prefer_readonly_struct = true:suggestion
+csharp_style_prefer_static_local_function = true:suggestion
+csharp_style_prefer_list_pattern = true:suggestion
 
 
 # .NET Naming conventions

@@ -16,7 +16,7 @@ trim_trailing_whitespace = true
 indent_style = tab
 
 # Visual Studio XML Project Files
-[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
+[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj,slnx}]
 indent_size = 2
 
 # XML Configuration Files
@@ -100,7 +100,12 @@ csharp_style_expression_bodied_properties = true:suggestion
 csharp_style_inlined_variable_declaration = true:suggestion
 csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
 csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+csharp_style_prefer_extended_property_pattern = true:suggestion
+csharp_style_prefer_not_pattern = true:suggestion
+csharp_style_prefer_pattern_matching = true:suggestion
+csharp_style_prefer_switch_expression = true:suggestion
 csharp_style_throw_expression = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
 csharp_style_var_for_built_in_types = false:suggestion
 csharp_style_var_when_type_is_apparent = true:suggestion
 # Organize usings

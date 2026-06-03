@@ -110,6 +110,19 @@ These instructions describe the coding conventions for this repository. Follow t
 
 All naming rules above are enforced at **warning** severity.
 
+## Code complexity and maintainability
+
+These are guidance thresholds, not hard failures. When generating, editing, or reviewing code, **call out explicitly when code exceeds a threshold** and suggest a refactor (extract method, introduce a parameter object/record, split the type).
+
+| Metric | Recommended | Hard limit | Notes |
+|---|---|---|---|
+| Function arguments | ≤ 4 | 6 | Beyond ~4, prefer a parameter object or `record`. Excludes dependency-injection and primary constructors. |
+| Function length | ≤ 30 lines | 60 | Keep methods single-purpose; extract helpers when longer. |
+| File length | ≤ 400 lines | 750 | One type per file; split helpers or use `partial` when larger. |
+| Cyclomatic complexity | ≤ 10 | 15 | Aligns with analyzer defaults; simplify branching or extract methods. |
+
+These thresholds are already enforced by the global `.editorconfig` via the following analyzers: `CA1501` (inheritance depth), `CA1502` (cyclomatic complexity), `CA1505` (maintainability index), `CA1506` (class coupling). Respect them proactively so generated code does not trigger these analyzers; the table above is the source of truth for the expected limits.
+
 ## Diagnostics
 
 - `IDE0052` (remove unread private member) is disabled.

@@ -130,6 +130,13 @@ These thresholds are already enforced by the global `.editorconfig` via the foll
 
 Do not reintroduce these diagnostics in new code unless explicitly requested.
 
+## Documentation and test synchronization
+
+- For every meaningful code change, review existing repository documentation and update it to reflect the current behavior, APIs, configuration, or workflows affected by the change.
+- Keep documentation updates in the same change set as the related code whenever possible so implementation and docs stay in sync.
+- Keep unit tests up to date with behavior changes: add or adjust tests so they describe and validate the updated behavior.
+- If a code change intentionally does not require documentation or unit test updates, state the reason explicitly.
+
 ## Generation guidance
 
 - When adding new files, match the indentation, line ending, and final-newline rules for that file's extension.

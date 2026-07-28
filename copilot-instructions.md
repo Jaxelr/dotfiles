@@ -130,6 +130,12 @@ These thresholds are already enforced by the global `.editorconfig` via the foll
 
 Do not reintroduce these diagnostics in new code unless explicitly requested.
 
+## Code comments
+
+- By default, do **not** add code comments to any codebase. Write self-explanatory code instead.
+- Only add code comments when I explicitly request them in the command/prompt.
+- This applies to inline comments, block comments, and XML doc comments on new or modified code. Do not remove or rewrite pre-existing comments unless asked.
+
 ## Documentation and test synchronization
 
 - For every meaningful code change, review existing repository documentation and update it to reflect the current behavior, APIs, configuration, or workflows affected by the change.

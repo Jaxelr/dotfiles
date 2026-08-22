@@ -143,6 +143,31 @@ Do not reintroduce these diagnostics in new code unless explicitly requested.
 - Keep unit tests up to date with behavior changes: add or adjust tests so they describe and validate the updated behavior.
 - If a code change intentionally does not require documentation or unit test updates, state the reason explicitly.
 
+## Commit message conventions
+
+Use **semantic (conventional) commit messages** for all commits in this repository.
+
+Format: `<type>(<scope>): <subject>`
+
+- `<scope>` is optional and should name the affected area (e.g. `feat(auth): ...`).
+- `<subject>` is a short summary in the **present tense** (e.g. "add hat wobble", not "added" or "adds").
+
+### Types
+
+- `feat`: a new feature for the user (not a new feature for a build script).
+- `fix`: a bug fix for the user (not a fix to a build script).
+- `docs`: changes to documentation only.
+- `style`: formatting, missing semicolons, etc.; no production code change.
+- `refactor`: refactoring production code, e.g. renaming a variable; no behavior change.
+- `test`: adding missing tests or refactoring existing tests; no production code change.
+- `chore`: updating build tasks, package manager configs, etc.; no production code change.
+
+### Example
+
+```
+feat: add hat wobble
+```
+
 ## Generation guidance
 
 - When adding new files, match the indentation, line ending, and final-newline rules for that file's extension.
